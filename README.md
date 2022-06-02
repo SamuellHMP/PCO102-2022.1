@@ -40,57 +40,51 @@ Em cada geração, a aptidão de cada indivíduo na população é avaliada, vá
 
 Algumas terminologias básicas para Algoritmos Genéticos são apresentadas a seguir: 
 
-Função de avaliação (fitness): é a função que se deseja otimizar. Para algoritmos de otimização padrão, ela é conhecida como função objetivo; 
+- Função de avaliação (fitness): é a função que se deseja otimizar. Para algoritmos de otimização padrão, ela é conhecida como função objetivo; 
 
-Indivíduos: é qualquer ponto ao qual pode-se aplicar a função de avaliação. O valor da função de aptidão para um indivíduo é sua pontuação. Um indivíduo às vezes é referido como um genoma e as entradas de vetores de um indivíduo como genes; 
+- Indivíduos: é qualquer ponto ao qual pode-se aplicar a função de avaliação. O valor da função de aptidão para um indivíduo é sua pontuação. Um indivíduo às vezes é referido como um genoma e as entradas de vetores de um indivíduo como genes; 
 
-Populações e gerações: uma população é um conjunto de indivíduos. A cada iteração, o algoritmo genético realiza uma série de cálculos na população atual para produzir uma nova população. Cada população sucessiva é chamada de nova geração; 
+- Populações e gerações: uma população é um conjunto de indivíduos. A cada iteração, o algoritmo genético realiza uma série de cálculos na população atual para produzir uma nova população. Cada população sucessiva é chamada de nova geração; 
 
-Diversidade: refere-se à distância média entre indivíduos em uma população. Uma população tem alta diversidade se a distância média for grande; 
+- Diversidade: refere-se à distância média entre indivíduos em uma população. Uma população tem alta diversidade se a distância média for grande; 
 
-Valor de aptidão: é o valor da função de aptidão para determinado indivíduo; 
+- Valor de aptidão: é o valor da função de aptidão para determinado indivíduo; 
 
-Pais e filhos: para criar a próxima geração, o algoritmo genético seleciona certos indivíduos na população atual, chamados pais, e os usa para criar indivíduos na próxima geração, chamados filhos. Normalmente, o algoritmo tem maior probabilidade de selecionar pais com melhores valores de aptidão. 
+- Pais e filhos: para criar a próxima geração, o algoritmo genético seleciona certos indivíduos na população atual, chamados pais, e os usa para criar indivíduos na próxima geração, chamados filhos. Normalmente, o algoritmo tem maior probabilidade de selecionar pais com melhores valores de aptidão. 
 
 As etapas a seguir podem ser aplicadas para usar o Algoritmo Genético em projetos industriais: 
 
-Inicialização: a população inicial de soluções candidatas é gerada aleatoriamente no espaço de pesquisa. No entanto, o conhecimento específico do domínio ou outras informações podem ser facilmente incorporados. 
+- Inicialização: a população inicial de soluções candidatas é gerada aleatoriamente no espaço de pesquisa. No entanto, o conhecimento específico do domínio ou outras informações podem ser facilmente incorporados. 
 
-Avaliação: uma vez que a população é inicializada ou uma população descendente é criada, os valores de aptidão das soluções candidatas são avaliados. 
+- Avaliação: uma vez que a população é inicializada ou uma população descendente é criada, os valores de aptidão das soluções candidatas são avaliados. 
 
-Seleção: a seleção aloca mais cópias dessas soluções com valores de adequação mais altos e, portanto, impõe o mecanismo de sobrevivência do mais apto às soluções candidatas. A ideia principal é escolher as melhores soluções dentre as piores, e muitos procedimentos de seleção foram propostos para realizar essa ideia, incluindo seleção de roleta, seleção universal estocástica, seleção de classificação e seleção de torneio. 
+- Seleção: a seleção aloca mais cópias dessas soluções com valores de adequação mais altos e, portanto, impõe o mecanismo de sobrevivência do mais apto às soluções candidatas. A ideia principal é escolher as melhores soluções dentre as piores, e muitos procedimentos de seleção foram propostos para realizar essa ideia, incluindo seleção de roleta, seleção universal estocástica, seleção de classificação e seleção de torneio. 
 
-Recombinação: a recombinação combina partes de duas ou mais soluções parentais para criar soluções novas e possivelmente melhores (ou seja, descendência). Existem muitas maneiras de fazer isso, e o desempenho competente depende de um mecanismo de recombinação adequadamente projetado. A prole sob recombinação não será idêntica a nenhum pai em particular e, em vez disso, combinam características parentais de uma maneira nova. 
+- Recombinação: a recombinação combina partes de duas ou mais soluções parentais para criar soluções novas e possivelmente melhores (ou seja, descendência). Existem muitas maneiras de fazer isso, e o desempenho competente depende de um mecanismo de recombinação adequadamente projetado. A prole sob recombinação não será idêntica a nenhum pai em particular e, em vez disso, combinam características parentais de uma maneira nova. 
 
-Mutação: enquanto a recombinação opera em dois ou mais cromossomos parentais, a mutação local, aleatoriamente, modifica uma solução. Novamente, existem muitas variações de mutações, mas geralmente envolve uma ou mais mudanças feitas nas características de um indivíduo. Em outras palavras, a mutação executa uma passagem aleatória nas proximidades de uma solução candidata. 
+- Mutação: enquanto a recombinação opera em dois ou mais cromossomos parentais, a mutação local, aleatoriamente, modifica uma solução. Novamente, existem muitas variações de mutações, mas geralmente envolve uma ou mais mudanças feitas nas características de um indivíduo. Em outras palavras, a mutação executa uma passagem aleatória nas proximidades de uma solução candidata. 
 
-Substituição: a população descendente criada por seleção, recombinação e mutação substitui a população parental original. O algoritmo geralmente seleciona indivíduos com melhores valores de aptidão como pais. O AG cria três tipos de filhos para a próxima geração: 
-
-Crianças de elite são os indivíduos da geração atual com os melhores valores de condicionamento físico. Esses indivíduos sobrevivem automaticamente até a próxima geração. 
-
-Crianças cruzadas são criadas combinando os vetores de um par de pais. 
-
-Os filhos da mutação são criados pela introdução de alterações aleatórias, ou mutações, a um único pai. 
+- Substituição: a população descendente criada por seleção, recombinação e mutação substitui a população parental original. O algoritmo geralmente seleciona indivíduos com melhores valores de aptidão como pais.
 
 Os AGs diferem da otimização convencional e do procedimento de busca em várias maneiras fundamentais, como listado a seguir: 
 
-Trabalham com uma codificação de conjunto de soluções, não com as próprias soluções; 
+- Trabalham com uma codificação de conjunto de soluções, não com as próprias soluções; 
 
-Buscam uma população de soluções, não uma única solução; 
+- Buscam uma população de soluções, não uma única solução; 
 
-Usam informações de payoff (função de avaliação), não derivadas ou outro conhecimento auxiliar; 
+- Usam informações de payoff (função de avaliação), não derivadas ou outro conhecimento auxiliar; 
 
-Usam regras de transição probabilísticas, não regras determinísticas. 
+- Usam regras de transição probabilísticas, não regras determinísticas. 
 
 Os AGs têm recebido atenção considerável em relação ao seu potencial como uma nova técnica de otimização. Existem quatro vantagens principais ao aplicar algoritmos genéticos para otimização de problemas: 
 
-Não têm muitos requisitos matemáticos sobre os problemas de otimização. Devido à sua natureza evolutiva, os AGs irão buscar soluções sem se preocupar com as especificidades internas do funcionamento do problema; 
+- Não têm muitos requisitos matemáticos sobre os problemas de otimização. Devido à sua natureza evolutiva, os AGs irão buscar soluções sem se preocupar com as especificidades internas do funcionamento do problema; 
 
-Podem lidar com qualquer tipo de função objetivo e qualquer tipo de restrição (ou seja, linear ou não linear) definidas em espaços de busca discretos, contínuos ou mistos; 
+- Podem lidar com qualquer tipo de função objetivo e qualquer tipo de restrição (ou seja, linear ou não linear) definidas em espaços de busca discretos, contínuos ou mistos; 
 
-A periodicidade dos operadores de evolução torna os AGs muito eficazes na execução de pesquisas globais (em probabilidade); 
+- A periodicidade dos operadores de evolução torna os AGs muito eficazes na execução de pesquisas globais (em probabilidade); 
 
-Os AGs fornecem uma grande flexibilidade para hibridizar com heurísticas dependentes de domínio para fazer uma implementação eficiente para um problema específico.
+- Os AGs fornecem uma grande flexibilidade para hibridizar com heurísticas dependentes de domínio para fazer uma implementação eficiente para um problema específico.
 
 # Base de Dados
 O dataset escolhido para este trabalho "Carla Driver Behaviour Dataset" foi coletado para classificar diferentes comportamentos de motoristas. A plataforma de simulação "Carla Simulator" foi usada para coletar os dados através de sensores virtuais de 6 eixos, sendo 3 eixos do acelerêmetro e 3 eixos do giroscópio.
