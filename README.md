@@ -8,7 +8,7 @@ Busca-se desenvolver um modelo otimizado de operação desses caminhões conside
 
 Os resultados dessa pesquisa também podem auxiliar trabalhos da área da computação, notadamente na simulação da operação e na automação desses caminhões, bem como na virtualização de um ambiente real de mineração. Esta proposta está alinhada com o projeto de pesquisa do qual eu participo e sou bolsista e estou envolvido no desenvolvimento de um sistema supervisório para um sistema de simulação de caminhões-fora-de-estrada CAT-793F em ambientes de mineração.
 
-A partir das referências [3-11], são revisados os dois métodos de Inteligência Artificial adotados para abordar o problema, Redes Neurais Artificiais e Algoritmos Genéticos, bem como são referenciados trabalhos recentes sobre cada um dos métodos. 
+A partir das referências [3-9], são revisados os dois métodos de Inteligência Artificial adotados para abordar o problema, Redes Neurais Artificiais e Correlação Cruzada, bem como são referenciados trabalhos recentes sobre cada um dos métodos. 
 
 # Justificativa
 De acordo com o website da mineradora Vale [1], seus maiores consumos energéticos são em eletricidade e em diesel. Este último é utilizado principalmente como combustível nos caminhões fora de estrada e nas locomotivas, participando de 24% do total do consumo energético. Além do combustível, toda máquina apresenta gastos com manutenção e substituição das peças que a compõem. A mineradora também está preocupada com a sustentabilidade de seus negócios, buscando estratégias para reduzir a emissão de gases do efeito estufa [1]. Geralmente, as empresas mineradoras possuem programas de eficiência energética que abrangem toda a matriz energética e esta pesquisa pode auxiliar estas empresas a serem mais eficientes na utilização de energia para atingirem as desafiadoras metas de sustentabilidade e, ao mesmo tempo, contribuir para o aumento de competitividade mediante a redução de custos operacionais. 
@@ -16,13 +16,11 @@ De acordo com o website da mineradora Vale [1], seus maiores consumos energétic
 Outros elementos que corroboram esta proposta estão relacionados às tendências tecnológicas da área da mineração. O cenário futuro da mineração aponta para a utilização de veículos autônomos e virtualização de ambientes reais de mineração [2]. As máquinas não precisarão de operadores humanos para funcionar, porém, para atingir isso, um caminho possível se inicia em se entender como o operador humano se comporta e qual é o modelo ótimo de operação dessas máquinas para depois construir softwares capazes de substituir os seres humanos nesta tarefa. 
 
 # Metodologias
-Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender.
+Foram escolhidas duas metodologias para abordar o problema: redes neurais artificiais e correlação cruzada, disponíveis em [7] e [9], respectivamente. Abaixo essas metodologias são discutidas brevemente.
 
-RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
+1. Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender. RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
 
-Algoritmos Genéticos (AG) constituem uma técnica de busca e otimização, altamente paralela, inspirada no princípio Darwiniano de seleção natural e reprodução genética [11]. Os princípios da natureza nos quais os AGs se inspiram são simples. De acordo com a teoria de Darwin, o princípio de seleção privilegia os indivíduos mais aptos com maior longevidade e, portanto, com maior probabilidade de reprodução.
-
-Indivíduos com mais descendentes têm mais chance de perpetuarem seus códigos genéticos nas próximas gerações. Tais códigos genéticos constituem a identidade de cada indivíduo e estão representados nos cromossomas. Estes princípios são imitados na construção de algoritmos computacionais que buscam uma melhor solução para um determinado problema, através da evolução de populações de soluções codificadas através de cromossomas artificiais.
+2. Em processamento de sinais, relação cruzada ou correlação cruzada é uma medida de similaridade entre dois sinais em função de um atraso aplicado a um deles. Também é conhecida como produto interno deslizante. A relação cruzada é frequentemente utilizada quando se deseja procurar por um sinal de curta duração que esteja inserido em um sinal mais longo. A relação cruzada é muito semelhante em natureza à convolução de duas funções. Porém, ao contrário da convolução, na relação cruzada não há espelhamento de um dos sinais. Outra importante propriedade que distingue estas duas operações é que a convolução é comutativa, o mesmo não ocorre na relação cruzada. Quando ambas as funções de entrada em uma relação cruzada são a mesma função, a relação cruzada é conhecida por autocorrelação.
 
 # Revisão Bibliográfica
 
@@ -32,67 +30,15 @@ As RNAs também são conhecidas como redes neurais, redes neurais simuladas ou p
 
 A parte principal de uma estrutura de rede neural é um 'nó'. Os nós biológicos geralmente somam os sinais recebidos de várias fontes de maneiras diferentes e, em seguida, realizam uma ação não linear nos resultados para criar as saídas. RNAs normalmente têm uma camada de entrada, uma ou mais camadas ocultas e uma camada de saída. Cada entrada é multiplicada por seu peso conectado e, no estado mais simples, essas quantidades e vieses são combinados; eles então passam pelas funções de ativação para criar a saída. 
 
-Em resumo, existem alguns fundamentos para a aplicação de RNAs: são modelos tolerantes a falhas e simples que não requerem informações para identificar os parâmetros relacionados; não precisam da descrição matemática dos fenômenos envolvidos no processo; e são utilizadas em várias aplicações de computador para resolver problemas complexos. 
+Em resumo, existem alguns fundamentos para a aplicação de RNAs: são modelos tolerantes a falhas e simples que não requerem informações para identificar os parâmetros relacionados; não precisam da descrição matemática dos fenômenos envolvidos no processo; e são utilizadas em várias aplicações de computador para resolver problemas complexos.
 
-O Algoritmo Genético (AG) fornece um método para resolver problemas de otimização, imitando o processo evolutivo com base na mecânica da seleção natural de Darwin. Esses algoritmos buscam métodos baseados em princípios de seleção natural e genética [7]. Os AGs podem ser categorizados como meta-heurísticas com perspectiva global e têm sido aplicados a uma ampla gama de problemas científicos, de engenharia e econômicos [8]. 
+Correlação cruzada são usadas para calcular e representar graficamente as correlações entre duas séries temporais em diferentes períodos de tempo. A representação gráfica das correlações cruzadas pode ajudar a determinar se uma série de dados conduz outra série, e até que ponto. Por exemplo, um engenheiro ambiental usa correlação cruzada para medir o sedimento em suspensão na água em dois locais de um rio durante mais de quinze dias. O engenheiro espera uma correlação entre os dois locais. Como um desses locais fica mais longe rio abaixo, o engenheiro espera que o padrão de correlação seja consistente com o tempo necessário para que a água se mova entre os dois locais.
 
-Recentemente, os AGs têm recebido considerável atenção quanto ao seu potencial como técnica de otimização para problemas complexos e têm sido aplicados com sucesso na área de engenharia industrial [9]. Eles são implementados como uma simulação de computador para encontrar as melhores soluções e codificam as variáveis ​​de decisão de um problema de pesquisa em cadeias de caracteres de comprimento finito de alfabetos de certa cardinalidade. 
+Aplicações de classificação por correlação cruzada podem ser encontradas nos trabalhos [7], em que se conseguiu uma alta acurárica, notadamente com o algoritmo KNN (K Nearest Neigbor) de 99%, e no trabalho [8], que corrobora o anterior, simplificando o modelo e obtendo também uma alta acurária.
 
-As strings, que são soluções candidatas para o problema de pesquisa, são referidas como cromossomos. Os alfabetos são chamados de genes e os valores dos genes são chamados de alelos. Em contraste com as técnicas de otimização tradicionais, os AGs trabalham com a codificação de parâmetros, ao invés dos próprios parâmetros. 
+O KNN é um algoritmo não pramétrico, onde a estrutura do modelo será determinada pelo dataset utilizado. Este algoritmo também é conhecido como de aprendizado lento (lazy). Os algoritmos do tipo lazy, não necessitam de dados de treinamento para se gerar o modelo, o que diminui em partes o processo inicial, mas em contrapartida gerará uma necessidade de análise posterior mais apurada. No caso de algoritmos que não necessitam de treinamento, todos os dados obtidos no dataset serão utilizados na fase de teste, resultando em um treinamento muito rápido e em um teste e validação lentos.
 
-Para desenvolver boas soluções e implementar a seleção natural, é essencial ter uma medida para distinguir boas soluções de soluções ruins. A medida pode ser uma função objetiva que é um modelo matemático ou uma simulação de computador, ou pode ser uma função subjetiva onde os humanos escolhem soluções melhores em vez de piores. Em essência, a medida de aptidão deve determinar a aptidão relativa de uma solução candidata, que será posteriormente usada pelo AG para orientar a evolução de boas soluções. 
-
-Outro conceito importante de AGs é a noção de população [10]. Ao contrário dos métodos de pesquisa tradicionais, os algoritmos genéticos dependem de uma população de soluções candidatas. O tamanho da população, que geralmente é um parâmetro especificado pelo usuário, é um dos parâmetros importantes que afetam a escalabilidade e o desempenho dos algoritmos genéticos. Uma vez que o problema é codificado de forma cromossômica e uma medida de adequação para discriminar as soluções boas das ruins foi escolhida, a evolução geralmente começa a partir de uma população de indivíduos gerados aleatoriamente e acontece em gerações.  
-
-Em cada geração, a aptidão de cada indivíduo na população é avaliada, vários indivíduos são selecionados estocasticamente da população atual (com base em sua aptidão) e modificados para formar uma nova população. A nova população é então usada na próxima iteração do algoritmo. Normalmente, o algoritmo termina quando um número máximo de gerações foi produzido ou um nível de aptidão satisfatório foi alcançado para a população. 
-
-Algumas terminologias básicas para Algoritmos Genéticos são apresentadas a seguir: 
-
-- Função de avaliação (fitness): é a função que se deseja otimizar. Para algoritmos de otimização padrão, ela é conhecida como função objetivo; 
-
-- Indivíduos: é qualquer ponto ao qual pode-se aplicar a função de avaliação. O valor da função de aptidão para um indivíduo é sua pontuação. Um indivíduo às vezes é referido como um genoma e as entradas de vetores de um indivíduo como genes; 
-
-- Populações e gerações: uma população é um conjunto de indivíduos. A cada iteração, o algoritmo genético realiza uma série de cálculos na população atual para produzir uma nova população. Cada população sucessiva é chamada de nova geração; 
-
-- Diversidade: refere-se à distância média entre indivíduos em uma população. Uma população tem alta diversidade se a distância média for grande; 
-
-- Valor de aptidão: é o valor da função de aptidão para determinado indivíduo; 
-
-- Pais e filhos: para criar a próxima geração, o algoritmo genético seleciona certos indivíduos na população atual, chamados pais, e os usa para criar indivíduos na próxima geração, chamados filhos. Normalmente, o algoritmo tem maior probabilidade de selecionar pais com melhores valores de aptidão. 
-
-As etapas a seguir podem ser aplicadas para usar o Algoritmo Genético em projetos industriais: 
-
-- Inicialização: a população inicial de soluções candidatas é gerada aleatoriamente no espaço de pesquisa. No entanto, o conhecimento específico do domínio ou outras informações podem ser facilmente incorporados. 
-
-- Avaliação: uma vez que a população é inicializada ou uma população descendente é criada, os valores de aptidão das soluções candidatas são avaliados. 
-
-- Seleção: a seleção aloca mais cópias dessas soluções com valores de adequação mais altos e, portanto, impõe o mecanismo de sobrevivência do mais apto às soluções candidatas. A ideia principal é escolher as melhores soluções dentre as piores, e muitos procedimentos de seleção foram propostos para realizar essa ideia, incluindo seleção de roleta, seleção universal estocástica, seleção de classificação e seleção de torneio. 
-
-- Recombinação: a recombinação combina partes de duas ou mais soluções parentais para criar soluções novas e possivelmente melhores (ou seja, descendência). Existem muitas maneiras de fazer isso, e o desempenho competente depende de um mecanismo de recombinação adequadamente projetado. A prole sob recombinação não será idêntica a nenhum pai em particular e, em vez disso, combinam características parentais de uma maneira nova. 
-
-- Mutação: enquanto a recombinação opera em dois ou mais cromossomos parentais, a mutação local, aleatoriamente, modifica uma solução. Novamente, existem muitas variações de mutações, mas geralmente envolve uma ou mais mudanças feitas nas características de um indivíduo. Em outras palavras, a mutação executa uma passagem aleatória nas proximidades de uma solução candidata. 
-
-- Substituição: a população descendente criada por seleção, recombinação e mutação substitui a população parental original. O algoritmo geralmente seleciona indivíduos com melhores valores de aptidão como pais.
-
-Os AGs diferem da otimização convencional e do procedimento de busca em várias maneiras fundamentais, como listado a seguir: 
-
-- Trabalham com uma codificação de conjunto de soluções, não com as próprias soluções; 
-
-- Buscam uma população de soluções, não uma única solução; 
-
-- Usam informações de payoff (função de avaliação), não derivadas ou outro conhecimento auxiliar; 
-
-- Usam regras de transição probabilísticas, não regras determinísticas. 
-
-Os AGs têm recebido atenção considerável em relação ao seu potencial como uma nova técnica de otimização. Existem quatro vantagens principais ao aplicar algoritmos genéticos para otimização de problemas: 
-
-- Não têm muitos requisitos matemáticos sobre os problemas de otimização. Devido à sua natureza evolutiva, os AGs irão buscar soluções sem se preocupar com as especificidades internas do funcionamento do problema; 
-
-- Podem lidar com qualquer tipo de função objetivo e qualquer tipo de restrição (ou seja, linear ou não linear) definidas em espaços de busca discretos, contínuos ou mistos; 
-
-- A periodicidade dos operadores de evolução torna os AGs muito eficazes na execução de pesquisas globais (em probabilidade); 
-
-- Os AGs fornecem uma grande flexibilidade para hibridizar com heurísticas dependentes de domínio para fazer uma implementação eficiente para um problema específico.
+No algoritmo KNN possuímos uma variável chamada de K, a qual é parte do nome do modelo e também o principal parâmetro a ser selecionado. Este parâmetro direcionará a quantidade de vizinhos (neighborn em inglês). Em casos de modelos binários, aonde possuímos apenas duas classes, em geral aplica-se valores ímpares a K.
 
 # Base de Dados
 O dataset escolhido para este trabalho "Carla Driver Behaviour Dataset" foi coletado para classificar diferentes comportamentos de motoristas. A plataforma de simulação "Carla Simulator" foi usada para coletar os dados através de sensores virtuais de 6 eixos, sendo 3 eixos do acelerêmetro e 3 eixos do giroscópio.
@@ -114,14 +60,10 @@ Segue abaixo a lista das referências utilizadas nesta proposta, na ordem em que
 
 [5] McCulloch, W. and Pitts, W., A logical calculus of the ideas immanent in nervous activity. The Bulletin of Mathematical Biophysics, 1943, 5(4): p. 115-133. 
 
-[6] Beigmoradi, S., Hajabdollahi, H. and Ramezani, A., Multi-objective aero acoustic optimisation of rear end in a simplified car model by using hybrid robust parameter design, artificial neural networks and genetic algorithm methods. Computers and Fluids, 2014, 90: p. 123-132. 
+[6] Beigmoradi, S., Hajabdollahi, H. and Ramezani, A., Multi-objective aero acoustic optimisation of rear end in a simplified car model by using hybrid robust parameter design, artificial neural networks and genetic algorithm methods. Computers and Fluids, 2014, 90: p. 123-132.
 
-[7] Gen, M. and Cheng, R., Genetic algorithms and engineering optimization. Vol. 7. 2000, New York City: John Wiley and Sons: p. 185-210. 
+[7] Ozel, Mehdi. Driver Classification via Neural Networks. Disponível em: https://www.kaggle.com/code/dasmehdixtr/driver-classification-via-neural-networks. Acesso em: 08/06/2022.
 
-[8] Sánchez, D., Melin, P., Castillo, O. and Valdez, F., Modular neural networks optimization with hierarchical genetic algorithms with fuzzy response integration for pattern recognition, in Advances in Computational Intelligence. 2013, Springer: p. 247-258. 
+[8] Ozel, Mehdi. High Accuracy Classification via Cross-Correlation. Disponível em: https://www.kaggle.com/code/dasmehdixtr/high-accuracy-classification-via-cross-corrleation. Acesso em 08/06/2022.
 
-[9] Tancret, F., Combination of Computational Thermodynamics, Gaussian Processes and Genetic Algorithms for Superalloy Design, in TMS 2013 142nd Annual Meeting and Exhibition, Supplemental Proceedings, Annual Meeting. 2013, The Minerals, Metals & Materials Society (TMS): Sydney, Australia: p. 301-309. 
-
-[10] Xiong, D., Fang, K., Dai, X. and Luo, Y., Optimal Selection of Duck Density in Rice-duck Integrated Agro-ecosystems Based on Genetic Algorithm. Advances in Information Sciences and Service Sciences, 2013, 5(7): p. 1143-1156.
-
-[11] D. Goldberg, Genetic Algorithms in Search, Optimization and Machine Learning, AddisonWesley 1989.
+[9] Ishan, Kumar. Minor Project Model via Cross-Correlation. Disponível em: https://www.kaggle.com/code/ishankumar2001/minor-project-model-via-cross-corrleation. Acesso em 08/06/2022.
