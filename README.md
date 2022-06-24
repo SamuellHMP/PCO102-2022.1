@@ -15,13 +15,6 @@ De acordo com o website da mineradora Vale [1], seus maiores consumos energétic
 
 Outros elementos que corroboram esta proposta estão relacionados às tendências tecnológicas da área da mineração. O cenário futuro da mineração aponta para a utilização de veículos autônomos e virtualização de ambientes reais de mineração [2]. As máquinas não precisarão de operadores humanos para funcionar, porém, para atingir isso, um caminho possível se inicia em se entender como o operador humano se comporta e qual é o modelo ótimo de operação dessas máquinas para depois construir softwares capazes de substituir os seres humanos nesta tarefa. 
 
-# Metodologias
-Foram escolhidas duas metodologias para abordar o problema: redes neurais artificiais e correlação cruzada, disponíveis em [7] e [9], respectivamente. Abaixo essas metodologias são discutidas brevemente.
-
-1. Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender. RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
-
-2. Em processamento de sinais, relação cruzada ou correlação cruzada é uma medida de similaridade entre dois sinais em função de um atraso aplicado a um deles. Também é conhecida como produto interno deslizante. A relação cruzada é frequentemente utilizada quando se deseja procurar por um sinal de curta duração que esteja inserido em um sinal mais longo. A relação cruzada é muito semelhante em natureza à convolução de duas funções. Porém, ao contrário da convolução, na relação cruzada não há espelhamento de um dos sinais. Outra importante propriedade que distingue estas duas operações é que a convolução é comutativa, o mesmo não ocorre na relação cruzada. Quando ambas as funções de entrada em uma relação cruzada são a mesma função, a relação cruzada é conhecida por autocorrelação.
-
 # Revisão Bibliográfica
 
 Há trabalhos sobre a aplicação de RNAs na engenharia de minas [3], engenharia bioquímica [4], medicina [5] e engenharia mecânica [6]. 
@@ -47,6 +40,33 @@ O ambiente de coleta de dados com o simulador Carla foi aplicado ao mapa "Town03
 
 O autor do dataset é Mehdi Özel, @dasmehdixtr, e está disponível no kaggle no seguinte link: https://www.kaggle.com/datasets/dasmehdixtr/carla-driver-behaviour-dataset. O autor deixa registrado no site que seu dataset é livre para propósitos acadêmicos.
 
+# Metodologias
+Foram escolhidas duas metodologias para abordar o problema: redes neurais artificiais e correlação cruzada, disponíveis em [7] e [9], respectivamente. Abaixo essas metodologias são discutidas brevemente.
+
+1. Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender. RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
+
+2. Em processamento de sinais, relação cruzada ou correlação cruzada é uma medida de similaridade entre dois sinais em função de um atraso aplicado a um deles. Também é conhecida como produto interno deslizante. A relação cruzada é frequentemente utilizada quando se deseja procurar por um sinal de curta duração que esteja inserido em um sinal mais longo. A relação cruzada é muito semelhante em natureza à convolução de duas funções. Porém, ao contrário da convolução, na relação cruzada não há espelhamento de um dos sinais. Outra importante propriedade que distingue estas duas operações é que a convolução é comutativa, o mesmo não ocorre na relação cruzada. Quando ambas as funções de entrada em uma relação cruzada são a mesma função, a relação cruzada é conhecida por autocorrelação.
+
+# Resultados Baseados em Métricas
+
+Baseado no código disponível em [10] foram criados gráficos de acurácia e perda nos conjuntos de treinamento e validação. Os gráficos mostram que a precisão do treinamento e a precisão da validação estão com grandes margens, e o modelo alcançou apenas cerca de 26% de precisão no conjunto de validação.
+
+Logo após, o modelo é refeito aumentando o número de épocas de 10 para 20, e, com isso, obteve-se uma acurácia de quase 30%.
+
+Com a visualização dos gráficos de acurácia e perda, é possível perceber que o modelo parece convergir para uma melhor acurária à medida que o número de épocas aumenta, porém, isso acontece lentamente. Em [7], o autor chegou a executar o modelo para 1100 épocas, obtendo uma acurácia de quase 55%.
+
+Pode-se concluir que este modelo de Rede Neural Artificial não é o melhor classificador para o dataset trabalhado, e veremos a seguir modelos que alcançam uma taxa de acurária muito melhor com menos esforço computacional.
+
+Com o modelo proposto em [9] foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN.
+
+# Conclusão
+
+O melhor modelo de classificação dentre os aplicados é o KNN com uma acurácia de quase 100%.
+
+Como limitação, cito a falta de capacidade para aplicar a métrica das curvas ROC, que foram indicadas pelo professor, porém, acredito que devido ao dataset ser muito grande, com várias classes, essa métrica se mostrou difícil de ser aplicada. Na tentativa, ao construir o vetor de previsões, depois de 40 minutos, o algoritmo não convergiu e abortei o processo.
+
+Como trabalhos futuros, que devem estar dentro da minha proposta de dissertação, acredito que consistirão na aplicação das técnicas e conceitos apreendidos com este trabalho no contexto que a dissertação se propõe, que acredito ser um caso mais específico do que foi trabalhado aqui.  
+
 # Referências
 Segue abaixo a lista das referências utilizadas nesta proposta, na ordem em que aparecem no texto. As duas primeiras são de websites brasileiros e as demais são de artigos científicos internacionais sobre o tema, levantados no banco de dados Scopus, da editora Elsevier. 
 
@@ -67,3 +87,5 @@ Segue abaixo a lista das referências utilizadas nesta proposta, na ordem em que
 [8] Ozel, Mehdi. High Accuracy Classification via Cross-Correlation. Disponível em: https://www.kaggle.com/code/dasmehdixtr/high-accuracy-classification-via-cross-corrleation. Acesso em 08/06/2022.
 
 [9] Ishan, Kumar. Minor Project Model via Cross-Correlation. Disponível em: https://www.kaggle.com/code/ishankumar2001/minor-project-model-via-cross-corrleation. Acesso em 08/06/2022.
+
+[10] TensorFlow. Classificação de imagem. Disponível em: https://www.tensorflow.org/tutorials/images/classification. Acesso em: 23/06/2022.
