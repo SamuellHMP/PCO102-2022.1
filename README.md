@@ -15,7 +15,7 @@ De acordo com o website da mineradora Vale [1], seus maiores consumos energétic
 
 Outros elementos que corroboram esta proposta estão relacionados às tendências tecnológicas da área da mineração. O cenário futuro da mineração aponta para a utilização de veículos autônomos e virtualização de ambientes reais de mineração [2]. As máquinas não precisarão de operadores humanos para funcionar, porém, para atingir isso, um caminho possível se inicia em se entender como o operador humano se comporta e qual é o modelo ótimo de operação dessas máquinas para depois construir softwares capazes de substituir os seres humanos nesta tarefa. 
 
-# Revisão Bibliográfica
+# Revisão de Literatura
 
 Há trabalhos sobre a aplicação de RNAs na engenharia de minas [3], engenharia bioquímica [4], medicina [5] e engenharia mecânica [6]. 
 
@@ -33,19 +33,19 @@ O KNN é um algoritmo não pramétrico, onde a estrutura do modelo será determi
 
 No algoritmo KNN possuímos uma variável chamada de K, a qual é parte do nome do modelo e também o principal parâmetro a ser selecionado. Este parâmetro direcionará a quantidade de vizinhos (neighborn em inglês). Em casos de modelos binários, aonde possuímos apenas duas classes, em geral aplica-se valores ímpares a K.
 
+# Metodologia
+Foram escolhidas duas metodologias para abordar o problema: redes neurais artificiais e correlação cruzada, disponíveis em [7] e [9], respectivamente. Abaixo essas metodologias são discutidas brevemente.
+
+1. Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender. RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
+
+2. Em processamento de sinais, relação cruzada ou correlação cruzada é uma medida de similaridade entre dois sinais em função de um atraso aplicado a um deles. Também é conhecida como produto interno deslizante. A relação cruzada é frequentemente utilizada quando se deseja procurar por um sinal de curta duração que esteja inserido em um sinal mais longo. A relação cruzada é muito semelhante em natureza à convolução de duas funções. Porém, ao contrário da convolução, na relação cruzada não há espelhamento de um dos sinais. Outra importante propriedade que distingue estas duas operações é que a convolução é comutativa, o mesmo não ocorre na relação cruzada. Quando ambas as funções de entrada em uma relação cruzada são a mesma função, a relação cruzada é conhecida por autocorrelação.
+
 # Base de Dados
 O dataset escolhido para este trabalho "Carla Driver Behaviour Dataset" foi coletado para classificar diferentes comportamentos de motoristas. A plataforma de simulação "Carla Simulator" foi usada para coletar os dados através de sensores virtuais de 6 eixos, sendo 3 eixos do acelerêmetro e 3 eixos do giroscópio.
 
 O ambiente de coleta de dados com o simulador Carla foi aplicado ao mapa "Town03". O modelo do carro escolhido para a coleta foi o "Seat Leon". O carro foi dirigido por 7 motoristas diferentes, no mesmo caminho por 5 voltas. A coluna "class" contem os primeiros nomes dos motoristas: [ mehdi, apo, gonca, onder, berk, selin, hurcan]
 
 O autor do dataset é Mehdi Özel, @dasmehdixtr, e está disponível no kaggle no seguinte link: https://www.kaggle.com/datasets/dasmehdixtr/carla-driver-behaviour-dataset. O autor deixa registrado no site que seu dataset é livre para propósitos acadêmicos.
-
-# Metodologias
-Foram escolhidas duas metodologias para abordar o problema: redes neurais artificiais e correlação cruzada, disponíveis em [7] e [9], respectivamente. Abaixo essas metodologias são discutidas brevemente.
-
-1. Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender. RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
-
-2. Em processamento de sinais, relação cruzada ou correlação cruzada é uma medida de similaridade entre dois sinais em função de um atraso aplicado a um deles. Também é conhecida como produto interno deslizante. A relação cruzada é frequentemente utilizada quando se deseja procurar por um sinal de curta duração que esteja inserido em um sinal mais longo. A relação cruzada é muito semelhante em natureza à convolução de duas funções. Porém, ao contrário da convolução, na relação cruzada não há espelhamento de um dos sinais. Outra importante propriedade que distingue estas duas operações é que a convolução é comutativa, o mesmo não ocorre na relação cruzada. Quando ambas as funções de entrada em uma relação cruzada são a mesma função, a relação cruzada é conhecida por autocorrelação.
 
 # Resultados Baseados em Métricas
 
@@ -59,7 +59,7 @@ Pode-se concluir que este modelo de Rede Neural Artificial não é o melhor clas
 
 Com o modelo proposto em [9] foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN.
 
-# Conclusão
+# Considerações Finais
 
 O melhor modelo de classificação dentre os aplicados é o KNN com uma acurácia de quase 100%.
 
