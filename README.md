@@ -47,23 +47,21 @@ O ambiente de coleta de dados com o simulador Carla foi aplicado ao mapa "Town03
 
 O autor do dataset é Mehdi Özel, @dasmehdixtr, e está disponível no kaggle no seguinte link: https://www.kaggle.com/datasets/dasmehdixtr/carla-driver-behaviour-dataset. O autor deixa registrado no site que seu dataset é livre para propósitos acadêmicos.
 
-# Resultados Baseados em Métricas
+# Análise dos Resultados com Métricas
 
-Baseado no código disponível em [10] foram criados gráficos de acurácia e perda nos conjuntos de treinamento e validação. Os gráficos mostram que a precisão do treinamento e a precisão da validação estão com grandes margens, e o modelo alcançou apenas cerca de 26% de precisão no conjunto de validação.
-
-Logo após, o modelo é refeito aumentando o número de épocas de 10 para 20, e, com isso, obteve-se uma acurácia de quase 30%.
+Baseado no artigo [10], modelo usando rede neural artifical, foram criados gráficos de acurácia e perda nos conjuntos de treinamento e validação. Os gráficos mostram que a precisão do treinamento e a precisão da validação estão com grandes margens, e o modelo alcançou apenas cerca de 26% de precisão no conjunto de validação.
 
 Com a visualização dos gráficos de acurácia e perda, é possível perceber que o modelo parece convergir para uma melhor acurária à medida que o número de épocas aumenta, porém, isso acontece lentamente. Em [7], o autor chegou a executar o modelo para 1100 épocas, obtendo uma acurácia de quase 55%.
 
 Pode-se concluir que este modelo de Rede Neural Artificial não é o melhor classificador para o dataset trabalhado, e veremos a seguir modelos que alcançam uma taxa de acurária muito melhor com menos esforço computacional.
 
-Com o modelo proposto em [9] foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN.
+Com o modelo proposto em [9], baseado em correlação cruzada, foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN.
 
 # Considerações Finais
 
 O melhor modelo de classificação dentre os aplicados é o KNN com uma acurácia de quase 100%.
 
-Como limitação, cito a falta de capacidade para aplicar a métrica das curvas ROC, que foram indicadas pelo professor, porém, acredito que devido ao dataset ser muito grande, com várias classes, essa métrica se mostrou difícil de ser aplicada. Na tentativa, ao construir o vetor de previsões, depois de 40 minutos, o algoritmo não convergiu e abortei o processo.
+Como limitação...
 
 Como trabalhos futuros, que devem estar dentro da minha proposta de dissertação, acredito que consistirão na aplicação das técnicas e conceitos apreendidos com este trabalho no contexto que a dissertação se propõe, que acredito ser um caso mais específico do que foi trabalhado aqui.  
 
@@ -88,4 +86,4 @@ Segue abaixo a lista das referências utilizadas nesta proposta, na ordem em que
 
 [9] Ishan, Kumar. Minor Project Model via Cross-Correlation. Disponível em: https://www.kaggle.com/code/ishankumar2001/minor-project-model-via-cross-corrleation. Acesso em 08/06/2022.
 
-[10] TensorFlow. Classificação de imagem. Disponível em: https://www.tensorflow.org/tutorials/images/classification. Acesso em: 23/06/2022.
+[10] Souza, E. G. Entendendo o que é Matriz de Confusão com Python. Disponível em: https://medium.com/data-hackers/entendendo-o-que-%C3%A9-matriz-de-confus%C3%A3o-com-python-114e683ec509. Acesso em: 01/07/2022.
