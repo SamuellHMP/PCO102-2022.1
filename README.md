@@ -55,15 +55,15 @@ Com a visualização dos gráficos de acurácia e perda, é possível perceber q
 
 Pode-se concluir que este modelo de Rede Neural Artificial não é o melhor classificador para o dataset trabalhado, e veremos a seguir modelos que alcançam uma taxa de acurária muito melhor com menos esforço computacional.
 
-Com o modelo proposto em [9], baseado em correlação cruzada, foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN.
+Com o modelo proposto em [9], baseado em correlação cruzada, foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN. Para o modelo com a maior acurácia, o KNN, foi construída a matriz de confusão e o relatório de classificação para avaliar melhor os resultados.
 
 # Considerações Finais
 
 O melhor modelo de classificação dentre os aplicados é o KNN com uma acurácia de quase 100%.
 
-Como limitação...
+Como limitação deste trabalho, vejo a necessidade de verificar se o dataset escolhido para trabalhar com o tema de perfil de condução realmente reflete as características do mundo real, ou até mesmo conseguir uma base de dados que traga melhores informações para identificação desses perfis.
 
-Como trabalhos futuros, que devem estar dentro da minha proposta de dissertação, acredito que consistirão na aplicação das técnicas e conceitos apreendidos com este trabalho no contexto que a dissertação se propõe, que acredito ser um caso mais específico do que foi trabalhado aqui.  
+Como trabalhos futuros, dentro do contexto da minha proposta de dissertação, acredito que consistirão na aplicação das técnicas e conceitos apreendidos com este trabalho no caso mais específico de análise do perfil de condução de operadores de caminhões fora de estrada de mineração.  
 
 # Referências
 Segue abaixo a lista das referências utilizadas nesta proposta, na ordem em que aparecem no texto. As duas primeiras são de websites brasileiros e as demais são de artigos científicos internacionais sobre o tema, levantados no banco de dados Scopus, da editora Elsevier. 
