@@ -1,23 +1,24 @@
-# PCO102-2022.1
-Atividades de Inteligência Artificial do POSCOMP Unifei
+# Aplicação de Inteligência Artificial na análise do perfil de condução
 
-# Introdução
-Este trabalho propõe como problema de pesquisa a aplicação de ferramentas de Inteligência Artificial (IA) na análise do perfil do operador de caminhão-fora-de-estrada de mineração. Pretendo utilizar o dataset escolhido para aplicar diferentes algoritmos de IA para classificar o comportamento do condutor do veículo em ambientes virtuais de simulação computacional. Futuramente, pretendo expandir essa aplicação para conseguir avaliar o desempenho dos condutores de caminhões-fora-de-estrada durante treinamendos usando simuladores.
+## Resumo
+Este trabalho com código fonte possui como tema a análise do perfil de condução baseada em técnicas de Inteligência Artificial. Foram aplicados modelos de redes neurais artificias ao dataset escolhido para identificar 7 classes, desse modo, trata-se de um problema de classificação múltipla abordado como aprendizado supervisionado. Os resultados mostram que a análise proposta é possível e traz resultados satisfatórios. Foram apresentadas diversas métricas para avaliar os modelos construídos, tendo um deles apresentado uma acurácia de quase 100%. Os modelos aqui construídos podem ser melhorados a partir da análise dos outliers e pesquisa teórica sobre as classes que se pretende identificar. 
+
+## Introdução
+Este trabalho tem como objeto de pesquisa a aplicação de ferramentas de Inteligência Artificial (IA) na análise do perfil de condução (PC). Mais especificamente, pretende-se analisar o perfil de condução do operador de caminhão-fora-de-estrada de mineração, porém não foi encontrado um dataset específico para este problema. Desse modo, pretendo utilizar o dataset escolhido para aplicar diferentes algoritmos de IA para classificar o comportamento do condutor do veículo em ambientes virtuais de simulação computacional. Futuramente, pretendo utilizar o aprendizado com este trabalho para avaliar o desempenho dos condutores de caminhões-fora-de-estrada durante treinamendos usando simuladores.
 
 Busca-se desenvolver um modelo otimizado de operação desses caminhões considerando a necessidade de aumentar a produtividade, diminuir o tempo ocioso, reduzir custos de operação e manutenção e aprimorar a segurança. Esta proposta trabalha com uma área de pesquisa ainda pouco explorada, de alta complexidade, devido aos parâmetros envolvidos e de grande valor para as empresas de mineração, fornecendo informações úteis de gestão para recrutar, acompanhar e avaliar os recursos humanos envolvidos na operação dessa importante parte da frota mineira. 
 
-Os resultados dessa pesquisa também podem auxiliar trabalhos da área da computação, notadamente na simulação da operação e na automação desses caminhões, bem como na virtualização de um ambiente real de mineração. Esta proposta está alinhada com o projeto de pesquisa do qual eu participo e sou bolsista e estou envolvido no desenvolvimento de um sistema supervisório para um sistema de simulação de caminhões-fora-de-estrada CAT-793F em ambientes de mineração.
+Os resultados dessa pesquisa também podem auxiliar outros trabalhos da área da computação, notadamente na simulação da operação e na automação desses caminhões, bem como na virtualização de um ambiente real de mineração. Esta proposta está alinhada com o projeto de pesquisa do qual eu participo e sou bolsista, em que estou envolvido no desenvolvimento de um sistema supervisório para um sistema de simulação de caminhões-fora-de-estrada CAT-793F em ambientes de mineração. Neste trabalho, analisar o perfil de condução do usuário final do sistema é de central importância.
 
 A partir das referências [3-9], são revisados os dois métodos de Inteligência Artificial adotados para abordar o problema, Redes Neurais Artificiais e Correlação Cruzada, bem como são referenciados trabalhos recentes sobre cada um dos métodos. 
 
-# Justificativa
-De acordo com o website da mineradora Vale [1], seus maiores consumos energéticos são em eletricidade e em diesel. Este último é utilizado principalmente como combustível nos caminhões fora de estrada e nas locomotivas, participando de 24% do total do consumo energético. Além do combustível, toda máquina apresenta gastos com manutenção e substituição das peças que a compõem. A mineradora também está preocupada com a sustentabilidade de seus negócios, buscando estratégias para reduzir a emissão de gases do efeito estufa [1]. Geralmente, as empresas mineradoras possuem programas de eficiência energética que abrangem toda a matriz energética e esta pesquisa pode auxiliar estas empresas a serem mais eficientes na utilização de energia para atingirem as desafiadoras metas de sustentabilidade e, ao mesmo tempo, contribuir para o aumento de competitividade mediante a redução de custos operacionais. 
+De acordo com o website da mineradora Vale [1], seus maiores consumos energéticos são em eletricidade e em diesel. Este último é utilizado principalmente como combustível dos caminhões-fora-de-estrada e das locomotivas, participando de 24% do total do consumo energético. Além do combustível, toda máquina apresenta gastos com manutenção e substituição das peças que a compõem. A mineradora também está preocupada com a sustentabilidade de seus negócios, buscando estratégias para reduzir a emissão de gases do efeito estufa [1]. Geralmente, as empresas mineradoras possuem programas de eficiência energética que abrangem toda a matriz energética e esta pesquisa pode auxiliar estas empresas a serem mais eficientes na utilização de energia para atingirem as desafiadoras metas de sustentabilidade e, ao mesmo tempo, contribuir para o aumento de competitividade mediante a redução de custos operacionais. 
 
-Outros elementos que corroboram esta proposta estão relacionados às tendências tecnológicas da área da mineração. O cenário futuro da mineração aponta para a utilização de veículos autônomos e virtualização de ambientes reais de mineração [2]. As máquinas não precisarão de operadores humanos para funcionar, porém, para atingir isso, um caminho possível se inicia em se entender como o operador humano se comporta e qual é o modelo ótimo de operação dessas máquinas para depois construir softwares capazes de substituir os seres humanos nesta tarefa. 
+Outros elementos que corroboram esta proposta estão relacionados às tendências tecnológicas da área da mineração. O cenário futuro da mineração aponta para a utilização de veículos autônomos e virtualização de ambientes reais de mineração [2]. As máquinas não precisarão de operadores humanos para funcionar, porém, para atingir isso, um caminho possível pode iniciar no entendimento de como o operador humano se comporta e qual é o modelo ótimo de operação dessas máquinas para depois construir softwares capazes de substituir os seres humanos nesta tarefa. 
 
-# Revisão de Literatura
+## Revisão da Literatura
 
-Há trabalhos sobre a aplicação de RNAs na engenharia de minas [3], engenharia bioquímica [4], medicina [5] e engenharia mecânica [6]. 
+Há trabalhos sobre a aplicação de Redes Neurais Artificiais (RNAs) na engenharia de minas [3], engenharia bioquímica [4], medicina [5] e engenharia mecânica [6], por exemplo.
 
 As RNAs também são conhecidas como redes neurais, redes neurais simuladas ou processamento paralelo distribuído e podem ser entendidas como modelos matemáticos que imitam algumas das características conhecidas dos sistemas nervosos naturais do ser humano e esboçam as analogias do aprendizado natural adaptativo. O principal componente de um paradigma de RNA particular pode ser a estrutura incomum do sistema de processamento de dados. Há um grupo de modelos que imita algumas das características conhecidas dos sistemas nervosos naturais e se baseia nas analogias do aprendizado natural adaptativo. O principal componente de um paradigma de RNA particular pode ser a estrutura incomum do sistema de processamento de dados. Um modelo neuronal típico é, portanto, composto de conectores ponderados, um somador e uma função de ativação. 
 
@@ -33,21 +34,21 @@ O KNN é um algoritmo não pramétrico, onde a estrutura do modelo será determi
 
 No algoritmo KNN possuímos uma variável chamada de K, a qual é parte do nome do modelo e também o principal parâmetro a ser selecionado. Este parâmetro direcionará a quantidade de vizinhos (neighborn em inglês). Em casos de modelos binários, aonde possuímos apenas duas classes, em geral aplica-se valores ímpares a K.
 
-# Metodologia
+## Metodologia
 Foram escolhidas duas metodologias para abordar o problema: redes neurais artificiais e correlação cruzada, disponíveis em [7] e [9], respectivamente. Abaixo essas metodologias são discutidas brevemente.
 
 1. Redes Neurais Artificiais (RNAs) são um método de Inteligência Artificial para simular o efeito de múltiplas variáveis em um parâmetro principal por uma função de aptidão. Elas fornecem soluções desejáveis para problemas complexos, pois podem interpretar as relações compostas entre os vários parâmetros envolvidos em um problema. Uma das principais vantagens das RNAs é que elas podem simular tanto relações lineares quanto relações não lineares entre parâmetros, usando as informações fornecidas para treinar a rede. São também conhecidas como processamento paralelo distribuído e basicamente são a representação algorítmica de métodos que o cérebro humano usa para aprender. RNAs são redes de sistemas de computação compostas de uma série de elementos de processamento simples e altamente interconectados, que processam informações buscando respostas dinâmicas para entradas externas. Caracterizam-se por ser modelos simples e tolerantes a falhas que não requerem informações para identificar os parâmetros relacionados e não requerem a descrição matemática dos fenômenos envolvidos no processo.
 
 2. Em processamento de sinais, relação cruzada ou correlação cruzada é uma medida de similaridade entre dois sinais em função de um atraso aplicado a um deles. Também é conhecida como produto interno deslizante. A relação cruzada é frequentemente utilizada quando se deseja procurar por um sinal de curta duração que esteja inserido em um sinal mais longo. A relação cruzada é muito semelhante em natureza à convolução de duas funções. Porém, ao contrário da convolução, na relação cruzada não há espelhamento de um dos sinais. Outra importante propriedade que distingue estas duas operações é que a convolução é comutativa, o mesmo não ocorre na relação cruzada. Quando ambas as funções de entrada em uma relação cruzada são a mesma função, a relação cruzada é conhecida por autocorrelação.
 
-# Base de Dados
+### Base de Dados
 O dataset escolhido para este trabalho "Carla Driver Behaviour Dataset" foi coletado para classificar diferentes comportamentos de motoristas. A plataforma de simulação "Carla Simulator" foi usada para coletar os dados através de sensores virtuais de 6 eixos, sendo 3 eixos do acelerêmetro e 3 eixos do giroscópio.
 
 O ambiente de coleta de dados com o simulador Carla foi aplicado ao mapa "Town03". O modelo do carro escolhido para a coleta foi o "Seat Leon". O carro foi dirigido por 7 motoristas diferentes, no mesmo caminho por 5 voltas. A coluna "class" contem os primeiros nomes dos motoristas: [ mehdi, apo, gonca, onder, berk, selin, hurcan]
 
 O autor do dataset é Mehdi Özel, @dasmehdixtr, e está disponível no kaggle no seguinte link: https://www.kaggle.com/datasets/dasmehdixtr/carla-driver-behaviour-dataset. O autor deixa registrado no site que seu dataset é livre para propósitos acadêmicos.
 
-# Análise dos Resultados com Métricas
+## Resultados e Análises
 
 Baseado no artigo [10], modelo usando rede neural artifical, foram criados gráficos de acurácia e perda nos conjuntos de treinamento e validação. Os gráficos mostram que a precisão do treinamento e a precisão da validação estão com grandes margens, e o modelo alcançou apenas cerca de 26% de precisão no conjunto de validação.
 
@@ -55,17 +56,17 @@ Com a visualização dos gráficos de acurácia e perda, é possível perceber q
 
 Pode-se concluir que este modelo de Rede Neural Artificial não é o melhor classificador para o dataset trabalhado, e veremos a seguir modelos que alcançam uma taxa de acurária muito melhor com menos esforço computacional.
 
-Com o modelo proposto em [9], baseado em correlação cruzada, foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN. Para o modelo com a maior acurácia, o KNN, foi construída a matriz de confusão e o relatório de classificação para avaliar melhor os resultados.
+Com o modelo proposto em [9], baseado em correlação cruzada, foi possível obter uma acurácia muito melhor do que o primeiro, chegando a uma acurária de aproximadamente 84% para o método SVM e quase 100% para o KNN. Para o modelo com a maior acurácia, o KNN, foi construída a matriz de confusão e o relatório de classificação para avaliar melhor os resultados. Foi possível observar que o modelo classifica melhor as classes 6, 0 e 4 e classifica mal as demais classes. Para avaliar melhor estes resultados, seria interessante analisar os outliers, bem como analisar de modo teórico o perfil de condução das classes do dataset.
 
-# Considerações Finais
+## Conclusão
 
-O melhor modelo de classificação dentre os aplicados é o KNN com uma acurácia de quase 100%.
+Os resultados deste trabalho comprovam a capacidade de desempenho das técnicas de Inteligência Artitifical para avaliar perfis de condução. O melhor modelo de classificação dentre os aplicados é o KNN com uma acurácia de quase 100%. Desse modo, o objetivo deste trabalho foi alcançado, já que restou verificado que o perfil de condução pode ser analisado da forma proposta. 
 
-Como limitação deste trabalho, vejo a necessidade de verificar se o dataset escolhido para trabalhar com o tema de perfil de condução realmente reflete as características do mundo real, ou até mesmo conseguir uma base de dados que traga melhores informações para identificação desses perfis.
+Como limitação deste trabalho, vejo a necessidade de verificar se o dataset escolhido para trabalhar com o tema de perfil de condução realmente reflete as características do mundo real, ou até mesmo conseguir uma base de dados que traga melhores informações para identificação desses perfis. É importante analisar os outliers, aplicar modelos resistentes aos mesmos e entender teoricamente as classes que se deseja identificar.
 
-Como trabalhos futuros, dentro do contexto da minha proposta de dissertação, acredito que consistirão na aplicação das técnicas e conceitos apreendidos com este trabalho no caso mais específico de análise do perfil de condução de operadores de caminhões fora de estrada de mineração.  
+Como trabalhos futuros, dentro do contexto da minha proposta de dissertação, acredito que consistirão na aplicação das técnicas e conceitos apreendidos com este trabalho no caso mais específico de análise do perfil de condução de operadores de caminhões-fora-de-estrada de mineração.  
 
-# Referências
+## Referências
 Segue abaixo a lista das referências utilizadas nesta proposta, na ordem em que aparecem no texto. As duas primeiras são de websites brasileiros e as demais são de artigos científicos internacionais sobre o tema, levantados no banco de dados Scopus, da editora Elsevier. 
 
 [1] VALE. Energia, Consumo e Eficiência energética. Disponível em: http://www.vale.com/brasil/PT/business/energy/Paginas/default.aspx Acesso em: 08/12/2021. 
